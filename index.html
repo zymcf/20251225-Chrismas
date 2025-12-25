@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎄 圣诞节礼物收集游戏 🎁</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="snow-container"></div>
+    
+    <div class="game-container">
+        <header class="game-header">
+            <h1>🎄 圣诞节礼物收集 🎁</h1>
+            <div class="author-mark">折沐出品</div>
+            <div class="score-board">
+                <span class="score">得分: <span id="score">0</span></span>
+                <span class="lives">生命: <span id="lives">3</span></span>
+                <span class="timer">时间: <span id="timer">60</span>s</span>
+                <span class="player-info">
+                    <span id="playerIcon">🎅</span>
+                    <span id="playerName">玩家</span>
+                </span>
+            </div>
+        </header>
+        
+        <div class="game-area" id="gameArea">
+            <div class="santa" id="santa">🎅</div>
+            <div class="player-name-display" id="playerNameDisplay"></div>
+            
+            <!-- 用户信息输入界面 -->
+            <div class="user-setup" id="userSetup">
+                <h2>🎄 欢迎来到圣诞世界! 🎄</h2>
+                <div class="input-group">
+                    <label for="nicknameInput">请输入您的昵称:</label>
+                    <input type="text" id="nicknameInput" placeholder="输入昵称" maxlength="10">
+                </div>
+                <div class="character-selection">
+                    <h3>选择您的角色:</h3>
+                    <div class="character-grid">
+                        <div class="character-option" data-icon="🎅">🎅</div>
+                        <div class="character-option" data-icon="🤶">🤶</div>
+                        <div class="character-option" data-icon="🧑‍🎄">🧑‍🎄</div>
+                        <div class="character-option" data-icon="⛄">⛄</div>
+                        <div class="character-option" data-icon="🦌">🦌</div>
+                        <div class="character-option" data-icon="🧝">🧝</div>
+                    </div>
+                </div>
+                <button id="confirmSetupBtn" class="setup-btn">确认设置</button>
+            </div>
+            
+            <div class="start-screen" id="startScreen" style="display: none;">
+                <h2>🎄 圣诞快乐! 🎄</h2>
+                <p>帮助您的角色收集礼物吧!</p>
+                <p>使用方向键或WASD移动</p>
+                <p>收集🎁礼物得分，避开DDL障碍物</p>
+                <button id="startBtn" class="start-btn">开始游戏</button>
+                <button id="leaderboardBtn" class="leaderboard-btn">查看排行榜</button>
+                <button id="backToSetupBtn" class="back-btn">修改设置</button>
+            </div>
+            
+            <div class="game-over" id="gameOver" style="display: none;">
+                <h2>游戏结束</h2>
+                <div class="final-result">
+                    <div class="player-result">
+                        <span id="finalPlayerIcon">🎅</span>
+                        <span id="finalPlayerName">玩家</span>
+                    </div>
+                    <p>你的得分: <span id="finalScore">0</span></p>
+                    <p class="rank-title">等级: <span id="playerRank">新手</span></p>
+                </div>
+                
+                <!-- 祝福输入区域 -->
+                <div class="blessing-section">
+                    <h3>🎄 给游戏制作人的圣诞祝福 🎄</h3>
+                    <p>请给“折一沐chun风”写下您的美好圣诞祝福吧！</p>
+                    <textarea id="blessingInput" placeholder="写下您的圣诞祝福...例如：圣诞快乐！游戏做得太棒了！祝你新年快乐！" maxlength="100"></textarea>
+                    <button id="submitBlessingBtn" class="blessing-btn">提交祝福</button>
+                </div>
+                
+                <button id="restartBtn" class="restart-btn">重新开始</button>
+                <button id="viewLeaderboardBtn" class="leaderboard-btn">查看排行榜</button>
+            </div>
+            
+            <!-- 排行榜 -->
+            <div class="leaderboard" id="leaderboard" style="display: none;">
+                <h2>🏆 排行榜 🏆</h2>
+                <div class="leaderboard-list" id="leaderboardList">
+                    <!-- 排行榜内容将由JavaScript动态生成 -->
+                </div>
+                
+                <!-- 祝福显示区域 -->
+                <div class="blessings-display" id="blessingsDisplay">
+                    <h3>🎁 玩家们的圣诞祝福 🎁</h3>
+                    <div class="blessings-list" id="blessingsList">
+                        <!-- 祝福内容将由JavaScript动态生成 -->
+                    </div>
+                </div>
+                
+                <button id="backToMenuBtn" class="back-btn">返回菜单</button>
+            </div>
+        </div>
+        
+        <div class="instructions">
+            <p>🎮 使用方向键或WASD键移动圣诞角色</p>
+            <p>🎁 收集礼物获得分数</p>
+            <p>📚 避开DDL障碍物（大学生的噩梦）</p>
+        </div>
+    </div>
+    
+    <script src="js/game.js"></script>
+</body>
+</html>
